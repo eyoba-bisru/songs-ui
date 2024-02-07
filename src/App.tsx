@@ -52,7 +52,7 @@ function App() {
   const [songs, setSongs] = useState<OneSong[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/songs")
+    fetch("https://songs-backend-cp2s.onrender.com/api/v1/songs")
       .then((value) => {
         return value.json();
       })
@@ -63,7 +63,9 @@ function App() {
 
   const handleDelete = (id: string) => {
     try {
-      fetch(`http://localhost:8080/api/v1/songs/${id}`, { method: "DELETE" })
+      fetch(`https://songs-backend-cp2s.onrender.com/api/v1/songs/${id}`, {
+        method: "DELETE",
+      })
         .then((value) => value.json())
         .then((value) => {
           console.log(value);

@@ -61,7 +61,7 @@ export const Edit = () => {
   const params = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/v1/songs/${params.id}`)
+    fetch(`https://songs-backend-cp2s.onrender.com/api/v1/songs/${params.id}`)
       .then((res) => res.json())
       .then((value) => {
         setFormData({ ...value });
@@ -71,7 +71,7 @@ export const Edit = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    fetch(`http://localhost:8080/api/v1/songs/${params.id}`, {
+    fetch(`https://songs-backend-cp2s.onrender.com/api/v1/songs/${params.id}`, {
       method: "PUT",
       body: JSON.stringify(formData),
       headers: {

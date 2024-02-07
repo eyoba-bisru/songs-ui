@@ -11,7 +11,7 @@ export const Statistics = () => {
   const [data, setData] = useState<Data>([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/songs/count/stat")
+    fetch("https://songs-backend-cp2s.onrender.com/api/v1/songs/count/stat")
       .then((res) => res.json())
       .then((res) => setData(res));
   }, []);

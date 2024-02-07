@@ -61,7 +61,7 @@ export const Create = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    fetch("http://localhost:8080/api/v1/songs", {
+    fetch("https://songs-backend-cp2s.onrender.com/api/v1/songs", {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {
